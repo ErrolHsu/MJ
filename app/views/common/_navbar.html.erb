@@ -1,0 +1,25 @@
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-list">
+				<i class="fa fa-th-list" aria-hidden="true"></i>
+			</button>
+			<%= link_to root_path, class: "navbar-brand" do %>	
+				<%= "Home" %>
+			<% end %>			
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="nav-list">
+			<ul class="nav navbar-nav navbar-right">		
+				<% if current_user %>
+					<li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
+				<% else %>
+					<li><%= link_to "登入", new_user_session_path %></li>
+					<li><%= link_to "註冊", new_user_registration_path %> </li>
+				<% end %>
+			</ul>
+		</div>
+	</div>	
+</nav>
+
