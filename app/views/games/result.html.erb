@@ -1,0 +1,9 @@
+<div class="mt">
+	<% @records.each do |record| %>
+		<h4><%= User.find_by(id: record.user_id).name %></h4>
+		<%= record.score %>
+		<hr>
+	<% end %>	
+</div>
+
+<%= link_to "確認並上傳", check_path, method: "post", class: "btn-lg" %>

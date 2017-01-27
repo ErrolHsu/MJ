@@ -27,6 +27,7 @@ gem "awesome_rails_console"
 gem "bootstrap-sass"
 gem "devise"
 gem "font-awesome-rails"
+gem "rb-readline"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

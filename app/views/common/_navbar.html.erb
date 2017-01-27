@@ -13,10 +13,11 @@
 		<div class="collapse navbar-collapse" id="nav-list">
 			<ul class="nav navbar-nav navbar-right">		
 				<% if current_user %>
+					<li><%= join_and_quit_game %></li>
 					<li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
 				<% else %>
 					<li><%= link_to "登入", new_user_session_path %></li>
-					<li><%= link_to "註冊", new_user_registration_path %> </li>
+					<li><%= link_to "報名", new_user_registration_path %> </li>
 				<% end %>
 			</ul>
 		</div>

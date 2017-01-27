@@ -4,8 +4,25 @@
 
 
 /* 按鈕 */
+.btn-lg {
+  vertical-align: middle;
+  text-align: center;
+	background: $red;
+	color: #fff;
+	display: block;
+	border-radius: 0;
+}
+
  .btn-1 {
  	background: $blue;
  	color: #fff;
  	padding: 5px 10px;
+	border-radius: 0;
  }
+
+
+/**/
+
+.hr-1 {
+	margin: 0;
+}

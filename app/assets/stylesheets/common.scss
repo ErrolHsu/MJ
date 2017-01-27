@@ -5,3 +5,27 @@ body {
 }
 
 
+
+/* 訊息 */
+
+.alert {
+	background: $green;
+	color: $black;
+	margin: 0 -15px ;
+	padding: 15px 40px 15px 15px;;
+	border-radius: 0;
+	border: none;
+}
+
+.alert-warning {
+	background: $red;
+	color: #fff;
+}
+
+/* display */
+
+.center {
+  vertical-align: middle;
+  text-align: center;
+}
+
