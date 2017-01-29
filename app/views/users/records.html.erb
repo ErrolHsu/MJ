@@ -3,14 +3,21 @@
 
 <div class="mt">
 	<% @records.each do |record| %>
-		<h4 class="black bold"><%= record.created_at.to_s(:mj) %></h4>
-		<%= user_record_score(record) %>
-
-		<div class="mt">
-			<% record.medals.each do |medal| %>
-				<span class="medal medal-<%= mo(medal) %>"><%= medal.name %></span>
-			<% end %>	
-		</div>		
+		<div class="record">
+		  <h4 class="black bold"><%= record.created_at.to_s(:mj) %></h4>
+		  <span class="mid"><%= user_record_score(record) %></span>
+  
+		  <div class="mt">
+		  	<% record.medals.each do |medal| %>
+		  		<span class="inline-block medal medal-<%= mo(medal) %>">
+		  			<%= medal.name %>
+						<% if medal.mo %>
+							<i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+						<% end %>							  			
+		  		</span>
+		  	<% end %>	
+		  </div>		
+		</div>
 		<hr class="hr-green">
 	<% end %>	
 

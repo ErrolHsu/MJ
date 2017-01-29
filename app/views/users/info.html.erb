@@ -1,16 +1,22 @@
-<div class="mt">
+<div class="mt lg">
+	<i class="fa fa-users" aria-hidden="true"></i>
 	對戰積分：<h3 class="red"><%= @user.point %></h3>
 </div>
 
 <hr>
 
-<div class="mt">
+<div class="mt lg">
 	<i class="fa fa-trophy" aria-hidden="true"></i>
 	成就積分：<h3 class="red"><%= medal_points %></h3>
 
 	<div class="mt">
 		<% @medals.each do |medal| %>
-			<span class="medal medal-<%= mo(medal) %>"><%= medal.name %></span>
+			<span class="inline-block medal medal-<%= mo(medal) %>">
+				<%= medal.name %>
+				<% if medal.mo %>
+					<i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+				<% end %>					
+			</span>
 		<% end %>	
 	</div>
 </div>
@@ -18,6 +24,7 @@
 
 <hr>
 
-<div class="mt">
+<div class="mt lg">
+	<i class="fa fa-balance-scale" aria-hidden="true"></i>
 	總積分：<h3 class="red"><%= @user.point + medal_points %></h3>
 </div>

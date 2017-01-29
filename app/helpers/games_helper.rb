@@ -23,11 +23,11 @@ module GamesHelper
 	#只顯示贏多少
 	def score_format(record)
 		if record.score < 0
-			content_tag(:p, "Lose", class: "red pull-right")
+			content_tag(:p, "Lose", class: "red pull-right fantasy lg")
 		elsif record.score == 0
-			content_tag(:p, "浪費時間", class: "red pull-right")
+			content_tag(:p, "浪費時間", class: "red pull-right fantasy lg")
 		else
-			content_tag(:p, "Win $#{record.score}", class: "dark-green pull-right")			
+			content_tag(:p, "Win $#{record.score}", class: "dark-green pull-right fantasy lg")			
 		end	
 	end
 

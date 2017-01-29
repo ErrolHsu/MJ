@@ -1,8 +1,27 @@
-.navbar-toggle {
-	color: #444;
-	background: #fff;
+.navbar {
+	border: none;
+	background: $black;
+	color: #fff;
+	a {
+		color: #fff !important;
+	}
 }
 
+.navbar-collapse {
+	background: $white;
+	a {
+		color: $black !important;
+	}
+}
+
+.navbar-toggle {
+	color: $black;
+	background: $white !important;
+}
+
+.navbar-toggle:focus {
+	background: $white !important;
+}
 
 #nav-list {
 	margin-top: 56px;

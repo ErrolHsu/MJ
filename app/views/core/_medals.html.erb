@@ -1,0 +1,8 @@
+<% record.medals.each do |medal| %>
+	<span class="inline-block mini-medal mini-medal-<%= mo(medal) %>" >
+		<%= medal.name %>
+		<% if medal.mo %>
+			<i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+		<% end %>		
+	</span>	
+<% end %>	

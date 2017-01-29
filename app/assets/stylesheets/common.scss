@@ -5,11 +5,11 @@ body {
 	color: $black;
 }
 
-
 .upload-page {
-	margin: -17px -15px 0 -15px;;
+	margin: -17px -15px 0 -15px;
 	padding:15px;
-	background: $green;
+	padding-top:30px;
+	background: #f3f1ed;
 }
 
 
@@ -88,4 +88,22 @@ body {
 	color: $gray;
 }
 
-/* 雜 */
+/* 字形 */
+
+.fantasy {
+	font-family: fantasy;
+}
+
+.cursive {
+	font-family: cursive;
+}
+
+/* 大小 */
+
+.lg {
+	font-size: 18px;
+}
+
+.mid {
+	font-size: 15px;
+}

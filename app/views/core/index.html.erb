@@ -8,19 +8,5 @@
 </div>
 
 <br>
-<h3 class="mt bold">歷史戰況：</h3>
 
-
-<div class="mt">
-	<% @games.each do |game| %>
-		<h4 class="black bold"><i class="fa fa-calendar" aria-hidden="true"></i> 
-			<%= game.created_at.to_s(:mj) %></h4>
-		<% game.records.each do |record| %>
-			<hr>
-			<%= record.user_name %>
-			<p class="pull-right"><%= score_format(record) %></p>
-		<% end %>
-		<hr class="hr-green">
-	<% end %>	
-
-</div>
+<%= render_game_history %>

@@ -1,6 +1,6 @@
 class Record < ActiveRecord::Base
 
-	has_many :medals
+	has_many :medals, dependent: :destroy
 
 	belongs_to :user
 	belongs_to :game

@@ -1,0 +1,19 @@
+<h3 class="mt bold"><div class="rl-border">虎尾厝麻將史：</div></h3>
+
+
+<div class="mt">
+	<% @games.each do |game| %>
+		<h4 class="black bold"><i class="fa fa-calendar" aria-hidden="true"></i> 
+			<%= game.created_at.to_s(:mj) %></h4>
+		<% game.records.each do |record| %>
+			<hr>
+			<span class="lg"><%= record.user_name %></span>
+			<p class="pull-right"><%= score_format(record) %></p>
+
+			<%= render_medals(record) %>
+
+		<% end %>
+		<hr class="hr-green">
+	<% end %>	
+
+</div>

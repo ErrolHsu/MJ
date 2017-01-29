@@ -5,4 +5,6 @@ module MedalHelper
 			"mo"
 		end	
 	end
+
+
 end

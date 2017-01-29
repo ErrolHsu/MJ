@@ -1,0 +1,38 @@
+
+/* medal */
+
+.medal {
+	font-size: 15px;
+	border: 2px solid #d3be86;
+	margin-top: 10px;
+	padding: 4px 9px;
+	background: #d3be86;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.medal-mo {
+	border: 2px solid #d3be86;
+	background: linear-gradient(right top, #fff, $white);
+	background: -webkit-linear-gradient(left top, #fff, $white);
+	color: #d3be86;
+	font-weight: bold;
+}
+
+
+.mini-medal {
+	font-size: 10px;
+	border: 2px solid #d3be86;
+	margin-top: 5px;
+	padding: 2px 6px;
+	background: #d3be86;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.mini-medal-mo {
+	border: 2px solid #d3be86;
+	background: linear-gradient(right top, #fff, $white);
+	background: -webkit-linear-gradient(left top, #fff, $white);	color: #d3be86;
+	font-weight: bold;
+}

@@ -13,9 +13,14 @@
 		<div class="collapse navbar-collapse" id="nav-list">
 			<ul class="nav navbar-nav navbar-right">		
 				<% if current_user %>
-					<li><%= link_to "#{current_user.name}！ 錢帶夠嗎？ ", "" %></li>
-					<li><%= join_and_quit_game %></li>
-					<li><%= link_to "積分/成就 ( #{current_user.name} )", info_path %></li>
+<!-- 					<li><%= link_to "#{current_user.name}！ 錢帶夠嗎？ ", "" %></li>
+ -->			<li><%= join_and_quit_game %></li>
+					<li>
+						<%= link_to info_path do %>
+							<i class="fa fa-trophy" aria-hidden="true"></i>
+							<%= " 積分/成就 ( #{current_user.name} )" %>
+						<% end %>
+					</li>
 					<li><%= link_to "個人戰績", records_path %></li>
 					<li><%= link_to "大賽規則", "#" %></li>
 					<li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>

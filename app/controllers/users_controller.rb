@@ -14,8 +14,7 @@ class UsersController < ApplicationController
 	end
 
 	def records
-		@records = current_user.records.order(created_at: :DESC )
-
+		@records = current_user.records.includes(:medals).order(created_at: :DESC )
 	end
 
 	def medal

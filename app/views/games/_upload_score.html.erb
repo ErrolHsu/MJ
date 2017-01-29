@@ -8,13 +8,24 @@
 
 <div class="mt">
 	<%= form_tag(upload_score_path, method: "post") do %>
-		<div><%= radio_button_tag :result, "win", true %> 贏囉! 	</div>
-		<div class="mt"><%= radio_button_tag :result, "lose" %> 輸拉.. </div>
+		<div>
+			<%= label_tag "aaa" do %>			
+				<%= radio_button_tag :result, "win", true, id: "aaa" %> <span class="fantasy  lg">WIN!!</span>
+			<% end %>
+		</div>
 		<div class="mt">
-			<%= label_tag :score, "數目" %>
-			<%= number_field_tag(:score, nil, class: "form-control") %>
+			<%= label_tag "bbb" do %>			
+				<%= radio_button_tag :result, "lose", false, id: "bbb" %> <span class="fantasy lg">LOSE..</span>
+			<% end %>	
+		</div>
+
+		<div class="mt">
+<!-- 			<%= label_tag :score %>
+ -->			<%= number_field_tag(:score, nil, class: "form-control") %>
 		</div>	
-		<%= submit_tag("登錄戰績", class: "btn btn-2 mt") %>
+		<%= button_tag(type: "submit", class: "btn btn-2 mt") do %>
+			<i class="fa fa-upload" aria-hidden="true"></i> 上傳
+		<% end %>
 	<% end %>
 	<%= show_result %>
 </div>

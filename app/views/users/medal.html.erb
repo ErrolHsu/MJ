@@ -12,6 +12,8 @@
 			<%= check_box_tag(:mo, 1) %> 
 			<%= label_tag :mo, "自摸" %>
 		</div>
-		<%= submit_tag("上傳", class: "btn btn-1 mt") %>	
+		<%= button_tag(type: "submit", class: "btn btn-1 mt") do %>
+			<i class="fa fa-upload" aria-hidden="true"></i> 上傳
+		<% end %>
 	<% end %>	
 </div>
