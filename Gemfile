@@ -29,8 +29,7 @@ gem "devise"
 gem "font-awesome-rails"
 gem "rb-readline"
 
-gem 'pg'
-gem 'rails_12factor', group: :production
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -41,6 +40,10 @@ gem 'rails_12factor', group: :production
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production do
+  gem "pg"
+  gem "rails_12factor"
+end
 
 
 group :development, :test do
