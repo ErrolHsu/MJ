@@ -2,8 +2,15 @@ html, body{ margin:0; height:100%; }
 
 body {
 	padding: 57px 0px 0 0px;
+	color: $black;
 }
 
+
+.upload-page {
+	margin: -17px -15px 0 -15px;;
+	padding:15px;
+	background: $green;
+}
 
 
 /* 訊息 */

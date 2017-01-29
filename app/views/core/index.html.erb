@@ -13,7 +13,8 @@
 
 <div class="mt">
 	<% @games.each do |game| %>
-		<h4 class="black bold"><%= game.created_at.to_s(:mj) %></h4>
+		<h4 class="black bold"><i class="fa fa-calendar" aria-hidden="true"></i> 
+			<%= game.created_at.to_s(:mj) %></h4>
 		<% game.records.each do |record| %>
 			<hr>
 			<%= record.user_name %>

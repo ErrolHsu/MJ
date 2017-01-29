@@ -1,4 +1,6 @@
-<div class="mt">
+<div class="upload-page">
+
+<div class="">
 	<%=  link_to medal_path, class: "btn-lg" do %>
 		<i class="fa fa-trophy" aria-hidden="true"></i> <%= "成就 GET!" %>
 	<% end %>	
@@ -12,8 +14,9 @@
 			<%= label_tag :score, "數目" %>
 			<%= number_field_tag(:score, nil, class: "form-control") %>
 		</div>	
-		<%= submit_tag("登錄戰績", class: "btn btn-1 mt") %>
+		<%= submit_tag("登錄戰績", class: "btn btn-2 mt") %>
 	<% end %>
 	<%= show_result %>
 </div>
 
+</div>

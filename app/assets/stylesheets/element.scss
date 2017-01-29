@@ -1,13 +1,15 @@
 .mt {
 	margin-top: 15px;
-} 
+}
+
+
 
 
 /* 按鈕 */
 .btn-lg {
   vertical-align: middle;
   text-align: center;
-	background: $red;
+	background: $dark-green;
 	color: #fff;
 	display: block;
 	border-radius: 0;
@@ -19,6 +21,15 @@
  	padding: 5px 10px;
 	border-radius: 0;
  }
+
+ .btn-2 {
+ 	background: #f3f1ed;
+ 	color: $black;
+ 	padding: 5px 10px;
+	border-radius: 0;
+ }
+
+
 
 
 /* hr */
