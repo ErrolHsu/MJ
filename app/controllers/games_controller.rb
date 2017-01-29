@@ -11,7 +11,7 @@ class GamesController < ApplicationController
 		current_user.save
 
 		#建立戰績記錄
-		current_user.records.create(current_game_id: current_game.id)
+		current_user.records.create(current_game_id: current_game.id, user_name: current_user.name)
 
 		#確認牌局人數是否已滿
 		if current_game.users.count == 4 
@@ -19,7 +19,7 @@ class GamesController < ApplicationController
 			current_game.save
 		end
 
-		flash[:success] = "你已參加此次牌局"
+		flash[:success] = "#{current_user.name}已參加此次牌局，目前已有#{current_game.users.count}人"
 
 		redirect_to root_path
 
@@ -37,7 +37,7 @@ class GamesController < ApplicationController
 
 			CurrentGame.last.update_attribute(:progress, false) if CurrentGame.last.progress == true
 
-			flash[:success] = "你已退出此次牌局"
+			flash[:success] = "#{current_user.name}已退出此次牌局"
 
 			redirect_to root_path
 		else
@@ -48,16 +48,16 @@ class GamesController < ApplicationController
 	def upload_score
 
 		game = CurrentGame.last
-		record = current_user.records.find_by(current_game_id: game.id)
+		record = game.records.find_by(user_id: current_user.id)
 		w_s = params[:score].to_i
 		l_s = w_s - w_s - w_s
 		score = params[:result] == "win" ? w_s : l_s 
 		record.score = score
-		record.complete = true
+		record.complete = true if !record.complete
 		record.save
 
-		game.state += 1
-		game.save
+		# game.state += 1
+		# game.save
 
 		redirect_to result_path
 	end
@@ -69,18 +69,53 @@ class GamesController < ApplicationController
 
 	def check
 		game = CurrentGame.last
+		@users = game.users
 		total = 0
+		state = 0
 		game.records.each do |record|
 			total += record.score
+			state += 1 if record.complete
 		end
 
-		if game.state != 4
-			flash[:warning] = "上傳需有4人之成績，目前僅有#{game.state}人"
+		if state != 4
+			flash[:warning] = "上傳需有4人之成績，目前僅有#{state}人"
 			redirect_to result_path
 		elsif total != 0
-			flash[:warning] = "輸贏有錯誤，請再確認一次"
+			flash[:warning] = "輸贏有誤，請再確認一次"
 			redirect_to result_path
-		end	
+		else
+		  #建立歷史戰績並計算積分
+		  history_game = Game.create
+		  history_game.users = game.users
+		  history_game.save
+		  game.records.each do |record|
+		  	record.user.calculate_point(record)
+		  	record.game = history_game
+		  	record.save
+		  end
+
+  
+		  #刪除用戶current_game
+		  game.users.each do |user|
+		  	user.current_game = nil
+		  	user.save
+		  end
+		  
+		  #刪除current_game
+		  game.destroy
+  		
+  		flash[:success] = "本局記錄已上傳"
+		  redirect_to root_path
+		end  
+
+
 	end
+
+	def edit_score
+		
+	end
+
+	private
+
 
 end

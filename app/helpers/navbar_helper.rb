@@ -11,16 +11,16 @@ module NavbarHelper
 	def join_and_quit_game
 		if !current_user.current_game
 			if !CurrentGame.last || !CurrentGame.last.progress
-				link_to "打牌", join_path
+				link_to "開戰", join_path
 			else
-				link_to "比賽進行中", "#"
+				link_to "比賽進行中..", "#"
 			end
 		else
-			#if !CurrentGame.last.progress
+			if !CurrentGame.last.progress
 				link_to "退出牌局", quit_path	
-			#else
-				#link_to "比賽進行中", "#"
-			#end	
+			else
+				link_to "比賽進行中", "#"
+			end	
 		end
 	end
 

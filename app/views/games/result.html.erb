@@ -2,6 +2,7 @@
 	<% @records.each do |record| %>
 		<h4><%= User.find_by(id: record.user_id).name %></h4>
 		<%= record.score %>
+		<%= edit_path(record.user_id) %>
 		<hr>
 	<% end %>	
 </div>

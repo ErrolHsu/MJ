@@ -1,0 +1,17 @@
+<h3 class="mt bold">個人戰績：</h3>
+
+
+<div class="mt">
+	<% @records.each do |record| %>
+		<h4 class="black bold"><%= record.created_at.to_s(:mj) %></h4>
+		<%= user_record_score(record) %>
+
+		<div class="mt">
+			<% record.medals.each do |medal| %>
+				<span class="medal medal-<%= mo(medal) %>"><%= medal.name %></span>
+			<% end %>	
+		</div>		
+		<hr class="hr-green">
+	<% end %>	
+
+</div>

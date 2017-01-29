@@ -1,13 +1,19 @@
 <div class="mt">
-	<%= form_tag(upload_score_path, method: "post") do %>
-		<div><%= radio_button_tag :result, "win", true %> 贏錢! 	</div>
-		<div class="mt"><%= radio_button_tag :result, "lose" %> 輸錢 </div>
-		<div class="mt">
-			<%= label_tag :score %>
-			<%= number_field_tag(:score, nil, class: "form-control") %>
-		</div>	
-		<%= submit_tag("送出", class: "btn btn-1 mt") %>
-	<% end %>
+	<%=  link_to medal_path, class: "btn-lg" do %>
+		<i class="fa fa-trophy" aria-hidden="true"></i> <%= "成就 GET!" %>
+	<% end %>	
 </div>
 
-<hr>
+<div class="mt">
+	<%= form_tag(upload_score_path, method: "post") do %>
+		<div><%= radio_button_tag :result, "win", true %> 贏囉! 	</div>
+		<div class="mt"><%= radio_button_tag :result, "lose" %> 輸拉.. </div>
+		<div class="mt">
+			<%= label_tag :score, "數目" %>
+			<%= number_field_tag(:score, nil, class: "form-control") %>
+		</div>	
+		<%= submit_tag("登錄戰績", class: "btn btn-1 mt") %>
+	<% end %>
+	<%= show_result %>
+</div>
+

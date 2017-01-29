@@ -14,9 +14,17 @@ Rails.application.routes.draw do
   post 'upload_score' => 'games#upload_score'
   post 'check'        => 'games#check'
 
+  #game
   get  'join' => 'games#join'
   get  'quit' => 'games#quit'
   get  'result' => "games#result"
+  get  'edit_score' => "games#edit_score"
+
+  #user
+  get 'info' => 'users#info'
+  get 'records' => "users#records"
+  get 'medal' => "users#medal"
+  post 'add_medal' => "users#add_medal"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

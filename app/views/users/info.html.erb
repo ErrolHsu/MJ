@@ -1,0 +1,23 @@
+<div class="mt">
+	對戰積分：<h3 class="red"><%= @user.point %></h3>
+</div>
+
+<hr>
+
+<div class="mt">
+	<i class="fa fa-trophy" aria-hidden="true"></i>
+	成就積分：<h3 class="red"><%= medal_points %></h3>
+
+	<div class="mt">
+		<% @medals.each do |medal| %>
+			<span class="medal medal-<%= mo(medal) %>"><%= medal.name %></span>
+		<% end %>	
+	</div>
+</div>
+
+
+<hr>
+
+<div class="mt">
+	總積分：<h3 class="red"><%= @user.point + medal_points %></h3>
+</div>

@@ -1,0 +1,17 @@
+<div class="mt">
+	<%= form_tag(add_medal_path, method: "post") do %>
+		<div class="mt">
+			<%= label_tag :name, "成就名稱" %>
+			<%= text_field_tag(:name, nil, class: "form-control") %>
+		</div>
+		<div class="mt">
+			<%= label_tag :point, "積分" %>
+			<%= number_field_tag(:point, nil, class: "form-control") %>			
+		</div>
+		<div class="mt">
+			<%= check_box_tag(:mo, 1) %> 
+			<%= label_tag :mo, "自摸" %>
+		</div>
+		<%= submit_tag("登錄戰績", class: "btn btn-1 mt") %>	
+	<% end %>	
+</div>
