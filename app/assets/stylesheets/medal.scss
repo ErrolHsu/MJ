@@ -13,8 +13,8 @@
 
 .medal-mo {
 	border: 2px solid #d3be86;
-	background: linear-gradient(right top, #fff, $white);
-	background: -webkit-linear-gradient(left top, #fff, $white);
+	background: linear-gradient(right top, #fff, lighten($white,2%));
+	background: -webkit-linear-gradient(left top, #fff, lighten($white,2%));
 	color: #d3be86;
 	font-weight: bold;
 }
@@ -32,7 +32,8 @@
 
 .mini-medal-mo {
 	border: 2px solid #d3be86;
-	background: linear-gradient(right top, #fff, $white);
-	background: -webkit-linear-gradient(left top, #fff, $white);	color: #d3be86;
+	background: linear-gradient(right top, #fff, lighten($white, 2%));
+	background: -webkit-linear-gradient(left top, #fff, lighten($white,2%));	
+	color: #d3be86;
 	font-weight: bold;
 }

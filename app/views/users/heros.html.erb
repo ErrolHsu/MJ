@@ -1,0 +1,15 @@
+<div class="mt-more">
+	<% @users.each do |user| %>
+		<h2 class=""><%= user.name %></h2>
+		<% user.medals.each do |medal| %>
+			<span class="inline-block medal medal-<%= mo(medal) %>">
+				<%= medal.name %>
+				<% if medal.mo %>
+					<i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+				<% end %>					
+			</span>
+		<% end %>
+		<p><%= "..." if user.medals.empty? %></p>
+		<hr class="">	
+	<% end %>	
+</div>

@@ -1,0 +1,18 @@
+<h2 class="mt-more black">
+	<%= @user.name %>
+</h2>
+<div class="mt lg">
+	<i class="fa fa-trophy" aria-hidden="true"></i>
+	個人成就：<h3 class="red"></h3>
+
+	<div class="mt">
+		<% @medals.each do |medal| %>
+			<span class="inline-block medal medal-<%= mo(medal) %>">
+				<%= medal.name %>
+				<% if medal.mo %>
+					<i class="fa fa-hand-spock-o" aria-hidden="true"></i>
+				<% end %>					
+			</span>
+		<% end %>	
+	</div>
+</div>

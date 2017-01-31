@@ -23,8 +23,13 @@ Rails.application.routes.draw do
   #user
   get 'info' => 'users#info'
   get 'records' => "users#records"
+  #新增medal頁面
   get 'medal' => "users#medal"
   post 'add_medal' => "users#add_medal"
+  #列出個人medals
+  get 'user_medals' => "users#user_medals"
+  #英雄榜
+  get 'heros' => "users#heros"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

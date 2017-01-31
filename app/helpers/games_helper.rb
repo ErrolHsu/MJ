@@ -3,6 +3,11 @@ module GamesHelper
 	def upload_score
 		if current_user && current_user.current_game
 			render "games/upload_score"
+		elsif current_user
+			link_to medal_path, class: "mt-more btn-lg half" do
+				content_tag(:i, "", class: "fa fa-trophy") +
+				content_tag(:span, "成就 GET!")
+			end	
 		end	
 	end
 

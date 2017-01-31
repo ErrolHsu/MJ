@@ -5,9 +5,13 @@
 			<%= text_field_tag(:name, nil, class: "form-control") %>
 		</div>
 		<div class="mt">
-			<%= label_tag :point, "積分" %>
+			<%= label_tag :point, "台數" %>
 			<%= number_field_tag(:point, nil, class: "form-control") %>			
 		</div>
+		<div class="mt">
+			<%= label_tag :description, "描述" %>
+			<%= text_area_tag(:description, nil, class: "form-control") %>
+		</div>		
 		<div class="mt">
 			<%= check_box_tag(:mo, 1) %> 
 			<%= label_tag :mo, "自摸" %>

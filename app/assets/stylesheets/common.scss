@@ -5,6 +5,15 @@ body {
 	color: $black;
 }
 
+.mt {
+	margin-top: 15px;
+}
+
+.mt-more {
+	margin-top: 30px;
+}
+
+
 .upload-page {
 	margin: -17px -15px 0 -15px;
 	padding: 30px 50px;
@@ -106,4 +115,8 @@ body {
 
 .mid {
 	font-size: 15px;
+}
+
+.half {
+	width: 50%;
 }

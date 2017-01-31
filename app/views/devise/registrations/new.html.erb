@@ -1,12 +1,17 @@
-<h2>報名</h2>
+<h2>註冊</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field mt">
+<!--   <div class="field mt">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true,class: "form-control" %>
-  </div>
+  </div> -->
+
+  <div class="field mt">
+    <%= f.label :account, "帳號" %><br />
+    <%= f.text_field :account, autofocus: true,class: "form-control" %>
+  </div>  
 
   <div class="field mt">
     <%= f.label "密碼" %>

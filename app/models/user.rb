@@ -2,7 +2,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable,
+         #將註冊登入改成使用username
+         :authentication_keys => [:account]
 
   has_many :game_members
   has_many :games, through: :game_members
@@ -10,6 +12,12 @@ class User < ActiveRecord::Base
   has_many :medals, dependent: :destroy
 
   belongs_to :current_game
+
+
+  #將註冊登入改成使用username
+  def email_required?
+    false
+  end
 
 
   def calculate_point(record)

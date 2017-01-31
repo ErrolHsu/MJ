@@ -15,18 +15,36 @@
 				<% if current_user %>
 <!-- 					<li><%= link_to "#{current_user.name}！ 錢帶夠嗎？ ", "" %></li>
  -->			<li><%= join_and_quit_game %></li>
-					<li>
+
+  				<li>
+ 						<%= link_to heros_path, class: "red" do %>
+							<i class="fa fa-bookmark" aria-hidden="true"></i>
+							<%= " 英雄榜" %>
+						<% end %>
+					</li>	
+
+  				<li>
+ 						<%= link_to user_medals_path do %>
+							<i class="fa fa-trophy" aria-hidden="true"></i>
+							<%= " 個人成就" %>
+						<% end %>
+					</li>	
+
+
+
+
+
+<!-- 					<li>
 						<%= link_to info_path do %>
 							<i class="fa fa-trophy" aria-hidden="true"></i>
 							<%= " 積分/成就 ( #{current_user.name} )" %>
 						<% end %>
 					</li>
-					<li><%= link_to "個人戰績", records_path %></li>
-					<li><%= link_to "大賽規則", "#" %></li>
+ -->					<li><%= link_to "個人戰績", records_path %></li>
 					<li><%= link_to('登出', destroy_user_session_path, :method => :delete) %></li>
 				<% else %>
 					<li><%= link_to "登入", new_user_session_path %></li>
-					<li><%= link_to "報名", new_user_registration_path %> </li>
+					<li><%= link_to "註冊", new_user_registration_path %> </li>
 				<% end %>
 			</ul>
 		</div>
